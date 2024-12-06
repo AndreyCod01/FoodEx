@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="main.css">
+<title>FoodEx</title>
+<body>
+<div class="main-window">
+
+<div class="name"><h1 class="txt">FoodEx</h1></div>
+<div class="words">
+    <input type="text" id="userInput" placeholder="Введите свой вопрос" class="input-line" style="outline: none">
+    <button id="submitButton" class="input-button"><img src="https://kenka.ru/local/templates/newdealer/images/search.png" class="img-poisk"></button>
+</div>
+<div class="prompt"><h2 class="txt-prompt">Недавнее</h2></div>
+<div class="news">
+    <div class="news-block active" id="block1"><img src="https://eda.ru/images/Article/652x350/pochemu-kolbasa-vygibaetsya-pri-zharke.webp" class="img-news"><div class="news-h2"><a href="https://eda.ru/media/vopros/pochemu-kolbasa-vygibaetsya-pri-zharke" style="text-decoration: none; color: white">Почему колбаса выгибается при жарке ?</a></div></div> 
+    <div class="news-block" id="block2"><img src="https://sun9-15.userapi.com/s/v1/ig2/SOky0AqkLnAJpj0mESr4upfA8jM0XVuV4iuz8QGY-w3d7CHMcw8seiCDZmohHNlAnCW7n_FH4RcO58CiahouTTNJ.jpg?quality=96&as=32x26,48x38,72x58,108x86,160x128,240x192,360x288,480x384,540x432,640x512,720x576,954x763&from=bu&u=h380E02rPQCRc6SXfWE0ZrG2iJZzQaVzYb5yaC6eMPA&cs=954x763" class="img-news2"><div class="news-h3"><a href="https://www.iamcook.ru/showrecipe/13253?ysclid=m4cn4tx2z2879816971" style="text-decoration: none; color: white">Как сделать вкусный эклер?</a></div></div> 
+    <div class="news-block" id="block3"><img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65b8ce43341f864c4e36704b_65b8ce46341f864c4e3673e2/scale_1200" class="img-news2"><div class="news-h3"><a href="https://eda.ru/media/master-klass/kak-sdelat-idealnye-kruassany" style="text-decoration: none; color: white">Как сделать вкусный круасан ?</a></div></div> 
+</div>
+<div class="social"> 
+    <a style="display:block" href="https://t.me/+5wExrfoqqZw1MzRi" target="_blank">
+        <div class="TG"><img src="https://panels.twitch.tv/panel-414181617-image-c3438c77-ba96-4663-a79f-8dca7837a679" class="img-TG"><h1 class="txt-TG">Наш Telegram</h1></div>
+    </a>
+    <a style="display:block" href="https://www.youtube.com/@Kara_prod" target="_blank">
+        <div class="YT"><img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/youtube_logo_icon_168737.png" class="img-YT"><h1 class="txt-YT">Наш Youtube</h1></div>
+    </a>
+</div>
+
+</div>
+</body>
+
+<script>
+const userInput = document.getElementById('userInput');
+const submitButton = document.getElementById('submitButton');
+const promptDiv = document.querySelector('.prompt');
+const wordsDiv = document.querySelector('.words');
+
+submitButton.addEventListener('click', () => {
+  const userQuery = userInput.value.trim(); // Add .trim()
+
+  if (userQuery) {
+    promptDiv.innerHTML += `<p><b></b> ${userQuery}</p>`;
+    const response = getResponse(userQuery); // Assuming getResponse is your function
+    wordsDiv.classList.add('hidden');
+    userInput.value = '';
+  } else {
+    alert("Пожалуйста, введите запрос."); // Alert the user
+    userInput.focus(); // Keep the focus on the input field
+  }
+});
+const blocks = document.querySelectorAll('.news-block');
+let currentBlock = 0;
+
+function showNextBlock() {
+  blocks[currentBlock].classList.remove('active');
+  blocks[currentBlock].classList.add('leaving'); // Add the leaving class
+
+  currentBlock = (currentBlock + 1) % blocks.length;
+
+  blocks[currentBlock].classList.add('active');
+  
+  setTimeout(() => {
+      blocks[currentBlock].classList.remove('leaving');
+    }, 100); // Remove the leaving class after the transition
+}
+
+
+setInterval(showNextBlock, 5000);
+
+const prompt = document.querySelector('.prompt');
+
+prompt.addEventListener('click', () => {
+  prompt.classList.toggle('expanded');
+});
+    </script>

@@ -1,0 +1,314 @@
+body {
+  background-image: url(https://abrakadabra.fun/uploads/posts/2022-01/1643226518_2-abrakadabra-fun-p-pattern-s-yedoi-4.png);
+  background-size: cover;
+}
+.main-window{
+    width: 600px; height: 950px;
+    background: rgb(80, 76, 76);
+    border-radius: 30px;
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    box-shadow: 0px 0px 30px black;
+}
+.name{
+    width: 580px;height: 100px;
+    border-radius: 30px;
+    margin-top: 10px;margin-left: 10px;
+}
+.words{
+    width: 580px;height: 50px;
+    border-radius: 30px;
+    margin-top: 100px;margin-left: 10px;
+}
+.prompt{
+    width: 200px;height: 40px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-top: 10px;margin-left: 200px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    color: #b9b9b9;
+    font-size: 20px;
+    user-select: none;
+    scrollbar-width: thin;
+    overflow-y: scroll;
+    position: fixed;
+    text-align: center;
+    transition: 0.1s;
+}
+.prompt.expanded {
+  width: 580px;
+  height: 250px;
+  margin-left: 10px;
+  text-align: left;
+  overflow-y: auto; /* Important: allow scrolling */
+  transition: 0.5s;
+}
+.txt-prompt{
+  margin-top: auto;
+  text-align: center;
+}
+.prompt p:hover{
+    color: white;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+
+}
+:root {
+  --scrollbarBg: rgb(97, 97, 97);
+  --scrollbarThumb: rgba(204, 247, 255, 0.8);
+  --scrollbarWidth: 12px;
+  --scrollbarBorder: 3px solid var(--scrollbarBg);
+  --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+}
+.prompt{
+  scrollbar-width: var(--scrollbarWidth);
+}
+.prompt::-webkit-scrollbar {
+  width: 0;
+}
+.prompt::-webkit-scrollbar-track {
+  background: var(--scrollbarBg);
+  border-radius: var(--scrollbarBorderRadius);
+}
+.prompt::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumb);
+  border-radius: var(--scrollbarBorderRadius);
+  border: var(--scrollbarBorder);
+}
+.words.hidden .input-line { /* Add a new state */
+  opacity: 0; /* Make the input field transparent when hidden */
+  pointer-events: none; /* Disable pointer events */
+}
+.news{
+    width: 580px;height: 150px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-top: 400px;margin-left: 10px;
+    position: relative;
+}
+.social{
+    width: 600px;height: 70px;
+    /*border: 1px solid black;*/
+    border-radius: 30px;
+    margin-top: 50px;
+    float: left;
+}
+.TG {
+    width: 270px;
+    height: 70px;
+    /*border: 1px solid black;*/
+    border-radius: 30px;
+    float: left;
+    background: linear-gradient(90deg, #858280, #635d5d);
+    user-select: none;
+    position: relative; /* Important for the margin change */
+    overflow: hidden; /* Hide content if it overflows */
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out, margin 0.2s ease-in-out; /* Transition for margin */
+  }
+  
+  .TG:hover {
+    width: 280px; /* Increased width */
+    height: 80px; /* Increased height */
+    margin-top: -5px; /* Prevents jump, crucial! */
+    border-radius: 30px;
+    float: left;
+    background: linear-gradient(90deg, #858280, #635d5d);
+    user-select: none;
+    position: relative;
+    overflow: hidden; /* Hide content if it overflows */
+  }
+  
+  .img-TG {
+    width: 80px; /* Increased width */
+    height: 70px; /* Increased height */
+    border-radius: 30px;
+    float: left;
+    user-select: none;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out; /* Added transition */
+    margin-left: -5px; /* Adjust to avoid gap on hover */
+    
+  }
+  
+  .TG:hover .img-TG {
+    width: 90px; /* Increased width */
+    height: 80px; /* Increased height */
+  }
+  .txt-TG {
+    margin-top: 20px;
+    font-size: 28px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 5px 0px 20px black;
+    user-select: none;
+    margin-left: 80px; /* Increased space from left */
+    transition: 0.2s ease-in-out;
+  }
+  
+  .TG:hover .txt-TG {
+    margin-left: 90px; /* Increase margin on hover */
+    font-size: 25px; /* Increase font size on hover */
+    transition: 0.2s ease-in-out;
+    margin-top: 25px;
+  }
+  .YT {
+    width: 270px;
+    height: 70px;
+    /*border: 1px solid black;*/
+    border-radius: 30px;
+    float: left;
+    background: linear-gradient(90deg, #858280, #635d5d);
+    user-select: none;
+    position: fixed;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out, margin 0.2s ease-in-out;
+    margin-left: 328px;
+  }
+  
+  .YT:hover {
+    width: 280px;
+    height: 80px;
+    margin-top: -5px;
+    border-radius: 30px;
+    float: left;
+    background: linear-gradient(90deg, #858280, #635d5d);
+    user-select: none;
+    position: fixed;
+    overflow: hidden;
+    margin-left: 318px;
+  }
+  
+  .img-YT {
+    width: 80px;
+    height: 80px;
+    border-radius: 30px;
+    float: left;
+    user-select: none;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    margin-left: 5px;
+    margin-top: -5px;
+  }
+  
+  .YT:hover .img-YT {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .txt-YT { /* Changed class name */
+    margin-top: 20px;
+    font-size: 28px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 5px 0px 20px black;
+    user-select: none;
+    margin-left: 80px; /* Increased space from left */
+    transition: 0.2s ease-in-out;
+  }@media (max-width: 1080px){
+    .txt-YT {
+      font-size: 24px;
+      margin-left: 0px;
+    }
+  
+  }
+  
+  .YT:hover .txt-YT {
+    margin-left: 90px; /* Increase margin on hover */
+    font-size: 25px; /* Increase font size on hover */
+    transition: 0.2s ease-in-out;
+    margin-top: 25px;
+  }
+.txt{ 
+    font-weight: bold; 
+    color: white; 
+    font-size: 80px; 
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: center; 
+    margin-top: 0px; 
+    user-select: none;
+ }
+ .input-line{
+    width: 515px;height: 50px;
+    border-radius: 30px;
+    position: relative;
+    margin-top: -1px;
+    margin-left: -3px;
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: monospace;
+    float: left;
+    user-select: none;
+ }
+ .input-button{
+    width: 50px;height: 50px;
+    border-radius: 30px;
+    float: left;
+    border: none;
+    margin-left: 14px;
+    user-select: none;
+ }
+ .input-button:hover{
+    background: rgb(245, 245, 154);
+    transition: 0.5s;
+ }
+ .img-poisk{
+    width: 35px;height: 35px;
+    user-select: none;
+ }
+ .news-block { 
+  width: 578px; 
+  height: 148px; 
+  display: none;  
+  text-align: center; 
+  line-height: 100px;  
+  background-color: #6b6767; 
+  border: 1px solid #6e6c6c; 
+  align-items: center; 
+  border-radius: 30px;
+  font-family: sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  user-select: none;
+  /* Important: Set a fixed height to avoid unnecessary layout reflows */
+  overflow: hidden;
+} 
+.news-block.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Add transition */
+  user-select: none;
+}
+
+.news-block.leaving { /* Added class */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  user-select: none;
+}
+
+.news {
+  position: relative;
+  user-select: none;
+}
+.news-h2{
+  font-size: 28px;
+  font-family: monospace;
+  margin-top: -370px;
+  text-shadow: 0px 0px 10px black;
+  color: white;
+  user-select: none;
+}
+.img-news2{
+  width: 580px;
+  height: 180px;
+  user-select: none;
+}
+.news-h3{
+  font-size: 28px;
+  font-family: monospace;
+  margin-top: -200px;
+  text-shadow: 0px 0px 10px black;
+  color: white;
+  user-select: none;
+}
